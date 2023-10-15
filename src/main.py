@@ -34,7 +34,6 @@ def main_options():
         print("8. update the system ")
         print("9. list unauth users")
         print("10. change all user passwords")
-        print("11. kevin only")
 
 
         choice = input("$ ")
@@ -58,9 +57,7 @@ def main_options():
         elif choice == '9':
             check_unauthorized_users()  
         elif choice == '10':
-            change_passwords()
-        elif choice == '11':
-            
+            change_passwords()            
         else:
             print("Invalid choice")
 
