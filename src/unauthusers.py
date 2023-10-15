@@ -34,7 +34,7 @@ def check_unauthorized_users():
     system_users = ['root', 'daemon', 'bin', 'sys', 'sync', 'games', 'man', 'lp', 'mail',
                     'news', 'uucp', 'proxy', 'www-data', 'backup', 'list', 'irc',
                     'gnats', 'nobody', 'systemd-network', 'systemd-resolve', 'syslog',
-                    'messagebus', '_apt', 'tss', 'sshd', 'landscape', 'pollinate', 'colord, whoopsie']
+                    'messagebus', '_apt', 'tss', 'sshd', 'landscape', 'pollinate', 'colord', 'whoopsie']
 
     check_users(allowed_users, system_users)
 
