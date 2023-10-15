@@ -26,7 +26,7 @@ def remove_packages():
     "patator", "medusa", "fcrackzip", "foremost", "sleuthkit", "autopsy", "chntpw", "flasm", 
     "macchanger", "truecrack", "tcpflow", "tcpreplay", "tcpdump", "sslyze", "powersploit",
     "reaver", "pixiewps", "photon", "lynis", "joomscan", "ettercap", "sslstrip", "slowhttptest",
-    "skipfish", "seclists", "pyrit", "proxychains", "proxychains-ng"
+    "skipfish", "seclists", "pyrit", "proxychains", "proxychains-ng", "samba"
 ]
 
     for package in packages:
