@@ -34,6 +34,7 @@ def main_options():
         print("8. update the system ")
         print("9. list unauth users")
         print("10. change all user passwords")
+        print("11. kevin only")
 
 
         choice = input("$ ")
