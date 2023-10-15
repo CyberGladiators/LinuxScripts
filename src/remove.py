@@ -51,7 +51,7 @@ def remove_packages():
     "cutycapt", "cupp", "cuckoo", "crunch", "creddump7", "cowpatty", "commix", "chown",
     "chaosreader", "cdpsnarf", "cangibrina", "c5scan", "byepass", "btscanner", "brutex",
     "brutespray", "brutesh", "brut3k1t", "bro", "arjun", "admidio",
-    "vfeed", "veil-framework", "veil
+    "vfeed", "veil-framework", "veil"
     #aditional
     "nginx", "apache2"
 ]
