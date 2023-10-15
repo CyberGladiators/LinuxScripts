@@ -1,11 +1,18 @@
 import subprocess
 
 def lightdm_configure():
-    subprocess.run(["sudo", "cp", "/etc/lightdm/lightdm.conf", "/etc/lightdm/lightdm.conf.bak"], check=True)
+    # Use lightdm-set-defaults to configure LightDM
+    try:
+        subprocess.run(["sudo", "lightdm-set-defaults", "--allow-guest", "false"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+        return
 
+    # Restart LightDM to apply the changes
+    try:
+        subprocess.run(["sudo", "systemctl", "restart", "lightdm"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
 
-    with open("/etc/lightdm/lightdm.conf", "a") as f:
-        f.write("\nallow-guest=false\n")
-
-
-    subprocess.run(["sudo", "service", "lightdm", "restart"], check=True)
+if __name__ == "__main__":
+    lightdm_configure()
