@@ -53,7 +53,7 @@ def remove_packages():
     "brutespray", "brutesh", "brut3k1t", "bro", "arjun", "admidio",
     "vfeed", "veil-framework", "veil"
     #aditional
-    "nginx", "apache2"
+    "samba", "postgresql", "sftpd", "vsftpd", "apache", "apache2", "ftp", "mysql", "php", "snmp", "pop3", "icmp", "sendmail", "dovecot", "bind9", "nginx"
 ]
 
     for package in packages:
