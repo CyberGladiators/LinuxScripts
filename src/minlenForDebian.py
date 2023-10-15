@@ -3,7 +3,7 @@ import subprocess
 
 subprocess.run(["sudo", "cp", "/etc/pam.d/common-password", "/etc/pam.d/common-password.bak"], check=True)
 
-def passwdMinimum():
+def passwdMinimumForDebian():
     try:
         with open("/etc/pam.d/common-password", "r") as f:
             lines = f.readlines()
