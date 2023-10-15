@@ -34,16 +34,7 @@ def check_unauthorized_users():
     system_users = ['root', 'daemon', 'bin', 'sys', 'sync', 'games', 'man', 'lp', 'mail',
                     'news', 'uucp', 'proxy', 'www-data', 'backup', 'list', 'irc',
                     'gnats', 'nobody', 'systemd-network', 'systemd-resolve', 'syslog',
-                    'messagebus', '_apt', 'tss', 'sshd', 'landscape', 'pollinate', 'colord', 'whoopsie']
-
-    system_users.extend(['usbmux', 'rtkit', 'lightdm', 'avahi-autoipd', 'avahi', 'kernoops', 'rtkit', 'speech-dispatcher', 'rtkit', 'avahi-autoipd', 'avahi', 'gdm', 'gnome-initial-setup', 'hplip', 'kernoops', 'rtkit', 'whoopsie', 'avahi-autoipd', 'avahi', 
-                         'gnome-initial-setup', 'gdm', 'rtkit', 'kernoops', 'saned', 'pulse', 'pulse-access', 'rtkit', 'speech-dispatcher', 'whoopsie', 'kernoops', 'saned', 'geoclue', 'rtkit', 'colord', 'rtkit', 'geoclue', 'gnome-initial-setup', 'gdm', 'lightdm', 'rtkit', 'sddm', 'gdm', 'whoopsie', 'colord', 'saned', 'rtkit', 'speech-dispatcher',
-                         'systemd-coredump', 'systemd-network', 'systemd-resolve', 'syslog', 'polkitd', 'avahi-autoipd', 'avahi', 
-                         'geoclue', 'gnome-initial-setup', 'rtkit', 'gdm', 'lightdm', 'kernoops', 'saned', 'gnome', 'libvirt-qemu', 'libvirt-dnsmasq', 'tss', 'sshd', 'usbmux', 'avahi-autoipd', 'avahi', 'geoclue', 'gdm', 'gnome-initial-setup','gnome', 'hplip', 'kernoops', 
-                         'lightdm', 'polkitd', 'rtkit', 'saned', 'speech-dispatcher', 'sddm', 'systemd-network', 'systemd-resolve', 'syslog', 
-                         'usbmux', 'whoopsie', 'colord', 'geoclue', 'gnome-initial-setup', 'gnome', 'gdm', 'lightdm', 'polkitd', 'rtkit', 'sddm', 'saned', 'speech-dispatcher', 'usbmux', 'rtkit', 'lightdm', 'avahi-autoipd', 'avahi', 'gnome-initial-setup', 'gnome', 'rtkit', 'kernoops', 'saned', 'whoopsie'])
-
-    # Please note that the list of system users may vary depending on your specific system and installed software.
+                    'messagebus', '_apt', 'tss', 'sshd', 'landscape', 'pollinate', 'colord, whoopsie']
 
     check_users(allowed_users, system_users)
 
