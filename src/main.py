@@ -13,6 +13,7 @@ from update import update_system
 from remove import remove_packages
 from unauthusers import check_unauthorized_users
 from changepasswd import change_passwords
+from minlenForDebian import passwdMinimumForDebian
 
 def display_ascii_art(file_path):
     with open(file_path, 'r') as file:
@@ -34,6 +35,7 @@ def main_options():
         print("8. update the system ")
         print("9. list unauth users")
         print("10. change all user passwords")
+        print("11. minlen for debian it uses pam btw")
 
 
         choice = input("$ ")
@@ -57,7 +59,9 @@ def main_options():
         elif choice == '9':
             check_unauthorized_users()  
         elif choice == '10':
-            change_passwords()            
+            change_passwords()
+        elif choice == '11':
+            passwdMinimumForDebian()
         else:
             print("Invalid choice")
 
