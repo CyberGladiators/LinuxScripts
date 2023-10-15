@@ -52,6 +52,8 @@ def remove_packages():
     "chaosreader", "cdpsnarf", "cangibrina", "c5scan", "byepass", "btscanner", "brutex",
     "brutespray", "brutesh", "brut3k1t", "bro", "arjun", "admidio",
     "vfeed", "veil-framework", "veil
+    #aditional
+    "nginx", "apache2"
 ]
 
     for package in packages:
