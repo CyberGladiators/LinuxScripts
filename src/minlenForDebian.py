@@ -42,4 +42,5 @@ def passwdMinimumForDebian():
         print(f"An error occurred: {str(e)}")
 
 
-passwdMinimumForDebian()
+if __name__ == "__main__":
+    passwdMinimumForDebian()
