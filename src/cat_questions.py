@@ -20,4 +20,6 @@ def search_and_display_files():
         print(" no Forensics_Questions found, something is probably wrong edit the cat_questions.py file to fix ")
 
 # Call the function
-search_and_display_files()
+
+if __name__ == "__main__":
+    search_and_display_files()
