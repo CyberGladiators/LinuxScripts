@@ -43,7 +43,7 @@ def remove_packages():
     "wepbuster", "wifiphisher", "wifitap", "wifite", "wapiti", "webacoo", "websploit",
     "httptunnel", "intersect", "polenum", "powersploit", "ridenum", "smbmap", "spoolsample",
     "sslcaudit", "unix-privesc-check", "windows-exploit-suggester",
-    "netsparker", "metagoofil", "lbd", "iptables", "iptraf-ng", "hping3", "hexinject",
+    "netsparker", "metagoofil", "lbd", "iptraf-ng", "hping3", "hexinject",
     "hexedit", "hashid", "hash-identifier", "hashcat-utils", "hashcat", "halberd", "gqrx",
     "gpp-decrypt", "goofile", "golismero", "gobuster", "goad", "gitrob", "gitmails",
     "fimap", "fiked", "fcrackzip", "faradaysec", "eyewitness", "enum4linux", "dnsenum",
@@ -53,7 +53,7 @@ def remove_packages():
     "brutespray", "brutesh", "brut3k1t", "bro", "arjun", "admidio",
     "vfeed", "veil-framework", "veil"
     #aditional
-    "samba", "postgresql", "vsftpd", "apache", "apache2", "mysql", "php", "snmp", "pop3", "sendmail", "dovecot", "bind9", "nginx"
+    "samba", "postgresql", "apache", "apache2", "mysql", "php", "snmp", "pop3", "sendmail", "dovecot", "bind9", "nginx"
 ]
 
     for package in packages:
