@@ -23,4 +23,5 @@ def passwdMinimum():
     except PermissionError:
         print("You must run this script with sudo permissions.")
 
-passwdMinimum()
+if __name__ == "__main__":
+    passwdMinimum()
