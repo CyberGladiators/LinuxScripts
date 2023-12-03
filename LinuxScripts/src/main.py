@@ -14,6 +14,7 @@ from remove import remove_packages
 from unauthusers import check_unauthorized_users
 from changepasswd import change_passwords
 from minlenForDebian import passwdMinimumForDebian
+from sysctl_conf import update_sysctl_config
 
 def display_ascii_art(file_path):
     with open(file_path, 'r') as file:
@@ -36,6 +37,7 @@ def main_options():
         print("9. list unauth users")
         print("10. change all user passwords")
         print("11. minlen for debian it uses pam btw")
+        print("12. update sysctl conf file")
 
 
         choice = input("$ ")
@@ -62,6 +64,8 @@ def main_options():
             change_passwords()
         elif choice == '11':
             passwdMinimumForDebian()
+        elif choice == '12':
+            update_sysctl_config()
         else:
             print("Invalid choice")
 
