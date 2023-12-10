@@ -10,14 +10,14 @@ def is_package_installed(package):
 def install_package(package):
     try:
         print(f"Installing {package}...")
-        subprocess.run(["sudo", "apt", "get", "-y", package], check=True)
+        subprocess.run(["sudo", "apt-get", "install", "-y", package], check=True)
         print(f"{package} installation complete.")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {str(e)}")
 
 def install_packages():
     packages = [
-    "deborphan", "micro", "vim", "clamscan", "clamtk"
+    "deborphan", "micro", "vim", "clamscan", "clamtk", "auditd"
     ]
     
     for package in packages:
