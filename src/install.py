@@ -17,7 +17,7 @@ def install_package(package):
 
 def install_packages():
     packages = [
-    "deborphan", "micro", "vim"
+    "deborphan", "micro", "vim", "clamscan", "clamtk"
     ]
     
     for package in packages:
