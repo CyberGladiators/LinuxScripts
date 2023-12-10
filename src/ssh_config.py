@@ -42,5 +42,13 @@ def modify_ssh_config():
 
     subprocess.run(["service", "ssh", "restart"])
 
+try:
+    with open("/etc/ssh/sshd_config", "r") as f:
+        lines = f.readlines()
+    # Rest of your code...
+except FileNotFoundError as e:
+    print(f"Error opening file: {e}")
+    print("Please check the file path and permissions.")
+
 # Uncomment the next line to run the function
 # modify_ssh_config()
