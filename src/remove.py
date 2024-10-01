@@ -51,7 +51,8 @@ def remove_packages():
     "cutycapt", "cupp", "cuckoo", "crunch", "creddump7", "cowpatty", "commix", "chown",
     "chaosreader", "cdpsnarf", "cangibrina", "c5scan", "byepass", "btscanner", "brutex",
     "brutespray", "brutesh", "brut3k1t", "bro", "arjun", "admidio",
-    "vfeed", "veil-framework", "veil"
+    "vfeed", "veil-framework", "veil", "netbus-pro", "ipscan", "driver-support", "beware-ircd",
+    "teamviewer", "utorrent", "ftpscan", "freeciv"
     #aditional
     "samba", "postgresql", "apache", "apache2", "mysql", "php", "snmp", "pop3", "sendmail", "dovecot", "bind9", "nginx"
 ]
