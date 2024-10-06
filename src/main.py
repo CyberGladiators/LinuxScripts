@@ -13,8 +13,9 @@ from update import update_system
 from remove import remove_packages
 from unauthusers import check_unauthorized_users
 from changepasswd import change_passwords
-from minlenForDebian import passwdMinimumForDebian
 from sysctl_conf import update_sysctl_config
+from disableFTPwriteCommands import disable_ftp_write_commands
+from logindefs import update_login_defs
 
 def display_ascii_art(file_path):
     with open(file_path, 'r') as file:
@@ -30,15 +31,15 @@ def main_options():
         print("2. Modify SSH Config")
         print("3. add minimum passwd of 8")
         print("4. remove packages")
-        print("5. list all the Forensics_Questions")
+        print("5. list all the Forensics Questions")
         print("6. find all users crontabs")
         print("7. Lightdm configure")
         print("8. update the system ")
         print("9. list unauth users")
         print("10. change all user passwords")
-        print("11. minlen for debian it uses pam btw")
-        print("12. update sysctl conf file")
-
+        print("11. update sysctl conf file")
+        print("12. disable FTP write commands")
+        print("13. set password age in login defs")
 
         choice = input("$ ")
 
@@ -63,9 +64,11 @@ def main_options():
         elif choice == '10':
             change_passwords()
         elif choice == '11':
-            passwdMinimumForDebian()
-        elif choice == '12':
             update_sysctl_config()
+        elif choice == '12':
+            disable_ftp_write_commands()
+        elif choice == "13":
+            update_login_defs()
         else:
             print("Invalid choice")
 

@@ -1,5 +1,6 @@
 import os
 
+
 def search_files():
     print("Choose the type of file you want to search for:")
     print("1. mp3")
@@ -8,9 +9,9 @@ def search_files():
     print("4. jpeg")
     print("5. jpg")
     print("6. webp")
-    
+
     choice = input("Enter your choice (1-6): ")
-    
+
     if choice == '1':
         filetype = "mp3"
     elif choice == '2':
@@ -26,11 +27,12 @@ def search_files():
     else:
         print("Invalid choice")
         return
-    
+
     for root, dirs, files in os.walk("/"):
         for file in files:
             if file.endswith(f".{filetype}"):
                 print(os.path.join(root, file))
+
 
 if __name__ == "__main__":
     search_files()
