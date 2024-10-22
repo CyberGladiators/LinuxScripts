@@ -16,6 +16,9 @@ from changepasswd import change_passwords
 from sysctl_conf import update_sysctl_config
 from disableFTPwriteCommands import disable_ftp_write_commands
 from logindefs import update_login_defs
+from list_home_dir_files import list_all_files_in_home_with_path
+from ufw import setup_ufw
+from sus_processes import check_suspicious_scripts
 
 def display_ascii_art(file_path):
     with open(file_path, 'r') as file:
@@ -40,7 +43,9 @@ def main_options():
         print("11. update sysctl conf file")
         print("12. disable FTP write commands")
         print("13. set password age in login defs")
-
+        print("14. list all hidden files in home directory")
+        print("15. enable and install ufw")
+        print("16. check for suspicious scripts")
         choice = input("$ ")
 
         if choice == '1':
@@ -69,6 +74,12 @@ def main_options():
             disable_ftp_write_commands()
         elif choice == "13":
             update_login_defs()
+        elif choice == "14":
+            list_all_files_in_home_with_path()
+        elif choice == "15":
+            setup_ufw()
+        elif choice == "16":
+            check_suspicious_scripts()
         else:
             print("Invalid choice")
 
