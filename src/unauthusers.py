@@ -35,7 +35,10 @@ def check_unauthorized_users():
                     'news', 'uucp', 'proxy', 'www-data', 'backup', 'list', 'irc',
                     'gnats', 'nobody', 'systemd-network', 'systemd-resolve', 'syslog',
                     'messagebus', '_apt', 'tss', 'sshd', 'landscape', 'pollinate', 'colord', 'whoopsie',
-                    'systemd-timesync', 'systemd-coredump', 'systemd-oom', 'fwupd', 'mysql', 'postgres']
+                    'systemd-timesync', 'systemd-coredump', 'systemd-oom', 'fwupd', 'mysql', 'postgres',
+                    'uuidd', 'avahi-autoipd','usbmux','dnsmasq','kernoops', 'avahi','cups-pk-helper',
+                    'rtkit','sssd','speech-dispatcher','saned','geoclue','pulse','gnome-initial-setup',
+                    'gdm','_rpc','statd']
 
     check_users(allowed_users, system_users)
 

@@ -19,6 +19,8 @@ from logindefs import update_login_defs
 from list_home_dir_files import list_all_files_in_home_with_path
 from ufw import setup_ufw
 from sus_processes import check_suspicious_scripts
+from remove_sudo_users import check_and_delete_sudo_users
+from chrome_popup import block_chrome_popups
 
 def display_ascii_art(file_path):
     with open(file_path, 'r') as file:
@@ -46,6 +48,8 @@ def main_options():
         print("14. list all hidden files in home directory")
         print("15. enable and install ufw")
         print("16. check for suspicious scripts")
+        print("17. remove sudo users")
+        print("18. enable chrome popups")
         choice = input("$ ")
 
         if choice == '1':
@@ -80,6 +84,10 @@ def main_options():
             setup_ufw()
         elif choice == "16":
             check_suspicious_scripts()
+        elif choice == "17":
+            check_and_delete_sudo_users()
+        elif choice == "18":
+            block_chrome_popups()
         else:
             print("Invalid choice")
 
