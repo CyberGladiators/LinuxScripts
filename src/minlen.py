@@ -1,27 +1,31 @@
 import subprocess
 
-subprocess.run(["sudo", "cp", "/etc/pam.d/common-password", "/etc/pam.d/common-password.bak"], check=True)
 
-subprocess.run(["sudo", "cp", "/etc/security/pwquality.conf", "/etc/security/pwquality.conf.bak"], check=True)
+def enforce_password_policy():
+    config_file = "/etc/pam.d/common-password"
+    search_line = "password requisite pam_pwquality.so retry=3"
+    minlen_option = "minlen=10"
 
-def passwdMinimum():
-    try:
-        
-        with open("/etc/pam.d/common-password", "r") as f:
-            lines = f.readlines()
+    # Read the contents of the file
+    with open(config_file, 'r') as file:
+        lines = file.readlines()
 
-        with open("/etc/pam.d/common-password", "w") as f:
-            for line in lines:
-                if "pam_unix.so" in line and "pam_pwquality.so" not in line:
-                    f.write("password requisite pam_pwquality.so retry=3\n")
-                f.write(line)
+    # Modify the line if it contains the search_line
+    modified = False
+    for i, line in enumerate(lines):
+        if search_line in line:
+            if minlen_option not in line:
+                lines[i] = line.strip() + f" {minlen_option}\n"
+                modified = True
+            break
 
-        with open("/etc/security/pwquality.conf", "a") as f:
-            f.write("minlen = 8\n")
-
-        print("Password length requirement has been set.")
-    except PermissionError:
-        print("You must run this script with sudo permissions.")
+    # Write back the changes if modified
+    if modified:
+        with open(config_file, 'w') as file:
+            file.writelines(lines)
+        print("Password policy enforced: Minimum length set to 10.")
+    else:
+        print("Password policy already enforced or line not found.")
 
 if __name__ == "__main__":
-    passwdMinimum()
+    update_password_policy()

@@ -5,8 +5,8 @@ import glob
 
 from find import search_files  
 from ssh_config import modify_ssh_config  
-from minlen import passwdMinimum
-from crontab_find import list_crontabs
+from minlen import enforce_password_policy
+from crontab_find import list_cron_jobs
 from cat_questions import search_and_display_files
 from lightdm_conf import lightdm_configure
 from update import update_system
@@ -16,11 +16,15 @@ from changepasswd import change_passwords
 from sysctl_conf import update_sysctl_config
 from disableFTPwriteCommands import disable_ftp_write_commands
 from logindefs import update_login_defs
-from list_home_dir_files import list_all_files_in_home_with_path
+from list_home_dir_files import find_txt_files_in_home
 from ufw import setup_ufw
 from sus_processes import check_suspicious_scripts
 from remove_sudo_users import check_and_delete_sudo_users
 from chrome_popup import block_chrome_popups
+from common_auth_nullok import remove_nullok_option
+from change_major_file_permissions import check_and_fix_permissions
+from list_sus_connections import list_suspicious_connections
+from configure_account_lockout_policy import configure_account_lockout_policy
 
 def display_ascii_art(file_path):
     with open(file_path, 'r') as file:
@@ -50,6 +54,10 @@ def main_options():
         print("16. check for suspicious scripts")
         print("17. remove sudo users")
         print("18. enable chrome popups")
+        print("19. pam.d common auth remove nullok")
+        print("20. change major file permissions")
+        print("21. list sus connections")
+        print("22. configure account lockout policy")
         choice = input("$ ")
 
         if choice == '1':
@@ -57,13 +65,13 @@ def main_options():
         elif choice == '2':
             modify_ssh_config()
         elif choice == '3':
-            passwdMinimum()
+            enforce_password_policy()
         elif choice == '4':
              remove_packages()
         elif choice == '5':
             search_and_display_files()
         elif choice == '6':
-            list_crontabs()
+            list_cron_jobs()
         elif choice == '7':
             lightdm_configure()  
         elif choice == '8':
@@ -79,7 +87,7 @@ def main_options():
         elif choice == "13":
             update_login_defs()
         elif choice == "14":
-            list_all_files_in_home_with_path()
+            find_txt_files_in_home()
         elif choice == "15":
             setup_ufw()
         elif choice == "16":
@@ -88,6 +96,14 @@ def main_options():
             check_and_delete_sudo_users()
         elif choice == "18":
             block_chrome_popups()
+        elif choice == "19":
+            remove_nullok_option()
+        elif choice == "20":
+            check_and_fix_permissions()
+        elif choice == "21":
+            list_suspicious_connections()
+        elif choice == "22":
+            configure_account_lockout_policy()
         else:
             print("Invalid choice")
 
