@@ -28,4 +28,4 @@ def enforce_password_policy():
         print("Password policy already enforced or line not found.")
 
 if __name__ == "__main__":
-    update_password_policy()
+    enforce_password_policy()
