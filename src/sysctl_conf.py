@@ -59,27 +59,38 @@ def update_sysctl_config():
         with open(sysctl_file, "r") as file:
             existing_content = file.readlines()
 
-        # Parse existing content into a dictionary
-        existing_entries = {}
+        # Create a list for new content that keeps all lines
+        new_content = []
+        updated_keys = set()
+
+        # Iterate through existing content
         for line in existing_content:
             if not line.strip().startswith("#") and "=" in line:
                 key, value = re.split(r"\s*=\s*", line.strip(), maxsplit=1)
-                existing_entries[key] = value
-
-        # Update or add entries
-        updated_content = []
-        for key, value in sysctl_config.items():
-            if key in existing_entries:
-                updated_content.append(f"{key} = {value}\n")
+                if key in sysctl_config:
+                    # Update the value if it exists in sysctl_config
+                    new_content.append(f"{key} = {sysctl_config[key]}\n")
+                    updated_keys.add(key)
+                else:
+                    # Keep the original line if not being updated
+                    new_content.append(line)
             else:
-                updated_content.append(f"{key} = {value}\n")
+                # Keep comments or other non-matching lines
+                new_content.append(line)
+
+        # Add new entries from sysctl_config that weren't in the original file
+        for key, value in sysctl_config.items():
+            if key not in updated_keys:
+                new_content.append(f"{key} = {value}\n")
 
         # Write updated content back to the file
         with open(sysctl_file, "w") as file:
-            file.writelines(updated_content)
+            file.writelines(new_content)
 
         print(f"Configurations updated successfully in {sysctl_file}")
     except PermissionError:
         print("Permission denied: You need to run this script as root.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
+update_sysctl_config()
